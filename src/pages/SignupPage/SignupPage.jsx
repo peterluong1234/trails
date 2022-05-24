@@ -5,6 +5,22 @@ import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpPage(props) {
+  const [error,setError] = setState('');
+  const [state, setState] = useState({
+    username: '',
+    email: '',
+    password: '',
+    passwordConf: '',
+    bio: ''
+  });
+  
+  function handleChange(e){
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
     <>
       <h1>Signup PAGE</h1>

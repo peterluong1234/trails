@@ -7,6 +7,9 @@ const userSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, lowercase: true, unique: true },
     email: { type: String, required: true, lowercase: true, unique: true },
+    firstName: String,
+    lastName: String,
+    dateOfBirth: Date,
     password: String,
     photoUrl: String, // string from aws!
   },
