@@ -36,7 +36,11 @@ export default function SignUpPage(props) {
         
         // use the userService to make the fetch request
         await userService.signup(formData);
-
+        props.handleSignUpOrLogin(); // <- this will decode the token from local storage
+        // that we just recieved as a respone to our userService.signup fetch call,
+        // and decode and update the state in our App component
+        navigate('/')
+        
         // Route to wherever you want!
         // after you get a response from the server from 
         // the signup request, you need to grab the token from 
