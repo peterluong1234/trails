@@ -5,6 +5,7 @@ import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpPage(props) {
+  const navigate = useNavigate();
   const [error, setError ]          = useState('')
   const [state, setState] = useState({
     username: '',
@@ -40,7 +41,7 @@ export default function SignUpPage(props) {
         // that we just recieved as a respone to our userService.signup fetch call,
         // and decode and update the state in our App component
         navigate('/')
-        
+
         // Route to wherever you want!
         // after you get a response from the server from 
         // the signup request, you need to grab the token from 
