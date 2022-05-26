@@ -6,6 +6,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import TrailPage from "../TrailPage/TrailPage";
 import CreateTrailPage from "../CreateTrailPage/CreateTrailPage";
+import Feed from "../../components/Feed/Feed";
 
 function App() {
   const [user, setUser] = useState(userService.getUser()); // getUser decodes our JWT token, into a javascript object
@@ -24,7 +25,7 @@ function App() {
   if (user) {
     return (
       <Routes>
-        <Route path="/" element={<h1>Home Page</h1>} />
+        <Route path="/" element={<Feed user={user} handleLogout={handleLogout} />} />
         <Route path="/createtrail" element={<CreateTrailPage />} />
         <Route
           path="/login"
@@ -53,5 +54,6 @@ function App() {
     </Routes>
   );
 }
+
 
 export default App;
