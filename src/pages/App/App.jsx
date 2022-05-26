@@ -46,6 +46,7 @@ function App() {
         element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
       />
       <Route path="/*" element={<Navigate to="/login" />} />
+      <Route path="/:id" element={<TrailPage />} />
     </Routes>
   );
 }
