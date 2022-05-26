@@ -16,14 +16,17 @@ export default function CreateTrailPage({user, handleLogout}){
     const [error, setError] = useState("")
     
     async function handleAddTrail(trail) {
-        try {
-            setLoading(true);
-            const data = await trailApi.create(trail);
-            console.log(data);
-        } catch (err) {
-            console.log(err);
-            setError(err.message)
-        }
+
+      const data = await trailApi.create(trail);
+      console.log(data);
+        // try {
+        //     setLoading(true);
+        //     const data = await trailApi.create(trail);
+        //     console.log(data);
+        // } catch (err) {
+        //     console.log(err);
+        //     setError(err.message)
+        // }
     }
 
     if (error) {
@@ -35,20 +38,20 @@ export default function CreateTrailPage({user, handleLogout}){
         );
       }
     
-      if (loading) {
-        return (
-          <>
-            <PageHeader handleLogout={handleLogout} user={user}/>
-            <Loading />
-          </>
-        );
-      } 
+      // if (loading) {
+      //   return (
+      //     <>
+      //       <PageHeader handleLogout={handleLogout} user={user}/>
+      //       <Loading />
+      //     </>
+      //   );
+      // } 
     
 
     return (
         <>
         <PageHeader handleLogout={handleLogout} user={user}/>
-        <AddTrailForm />
+        <AddTrailForm handleAddTrail={handleAddTrail}/>
 
         </>
     )

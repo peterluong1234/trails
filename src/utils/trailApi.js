@@ -5,7 +5,7 @@ const BASE_URL = '/api/trails';
 export function create(trail) {
     return fetch(BASE_URL, {
         method: 'POST',
-        body: postMessage,
+        body: trail,
         headers: {
             'Authorization': 'Bearer ' + tokenService.getToken()
         }
