@@ -26,3 +26,15 @@ export function getAll() {
         throw new Error('Bad Credentials! Check the Server Terminal!');
     })
 }
+
+export function deleteTrail(trailId){
+    return fetch(BASE_URL, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        }
+    }).then(res => {
+		if(res.ok) return res.json()
+		throw new Error('Not logged In! Check Express terminal')
+	})
+}
