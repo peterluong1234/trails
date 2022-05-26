@@ -24,7 +24,8 @@ function App() {
   if (user) {
     return (
       <Routes>
-        <Route path="/" element={<CreateTrailPage />} />
+        <Route path="/" element={<h1>Home Page</h1>} />
+        <Route path="/createtrail" element={<CreateTrailPage />} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
