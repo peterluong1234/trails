@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function CreateTrail(props){
+export default function CreateTrailPage(props){
     return (
         <>
-            <div>Trail Page</div>
+        <span>Trail Page</span>
         </>
     )
 }
