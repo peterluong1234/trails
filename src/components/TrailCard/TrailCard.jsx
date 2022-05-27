@@ -8,9 +8,9 @@ function TrailCard({trail, user, deleteTrail}) {
     let owner;
     // if(trail.user._id == user._id)
 
-    function clickHandler() {
+    const clickHandler = () => {
         deleteTrail(trail._id)
-        console.log('x button')
+        console.log(trail._id)
     }
   return (
     <Card key={trail._id} raised>

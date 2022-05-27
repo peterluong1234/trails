@@ -46,9 +46,10 @@ async function index(req, res){
 
 async function deleteTrail(req, res) {
     try {
-        const trail = await Trail.findOne({'trail._id': req.params.id, 'trail.username': req.user.username});
+        // console.log(req.params.id)
+        const trail = await Trail.findById(req.params.id);
         trail.remove(req.params.id);
-        console.log(trail)
+        console.log('LOOKATTHIS', trail)
         // await trail.save()
         res.json({data: 'trail removed'})
     } catch(err) {
