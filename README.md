@@ -1,37 +1,33 @@
-## Setup 
+## Trails 
+Based on the popular hiking app, AllTrails, Trails is an alternative that focuses on backpacking trails. 
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+#### Main Feed
+![Screen Shot 2022-05-27 at 7 50 33 AM](https://user-images.githubusercontent.com/95894562/170723938-a7117fdd-4d90-444f-8a1a-0006b9557c04.png)
 
+## Technologies Used
+* MongoDB/Mongoose
+* Express
+* React
+* Node.js
+* SemanticUI
+* HTML
+* CSS
+* JavasScript
 
-#### Setup your git repo
+## Getting Started
+### Planning
+https://trails-tracker-app.herokuapp.com/
+https://trello.com/b/wDT0Tmuc/project-4
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2. Then you can run the following commands in the root of your project 
+#### What the app will look like
+![Screen Shot 2022-05-27 at 8 06 25 AM](https://user-images.githubusercontent.com/95894562/170727066-84c9a9e8-2b13-47c0-9331-e2b179543e00.png)
+![Screen Shot 2022-05-27 at 8 05 56 AM](https://user-images.githubusercontent.com/95894562/170727081-3c5dea05-c6b9-47b1-bd49-baf60742f640.png)
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be, look at the address in the code github gives you!
-git push -u origin main
-```
-
-#### Setup the App
-
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+## Icebox
+- Users can save other users' backpacking trails
+- Users will be able to see a trail map and plan a route
+- Users will be able to review trails
+- Users will be able to look for trails based on location
+- Users will be able to add their own gear list
+- Users will be able to see trail pages
+- Full integration of mapbox API
