@@ -1,6 +1,7 @@
 // import { PresignedPost } from 'aws-sdk/clients/s3';
 import React, { useState } from 'react';
 import { Button, Form, Grid, Header, Image,  Segment } from 'semantic-ui-react';
+import { useNavigate } from "react-router-dom";
 
 export default function AddTrailForm(props){
     const [selectedFile, setSelectedFile] = useState('')
@@ -10,6 +11,7 @@ export default function AddTrailForm(props){
         end: '',
         type: ''
     })
+    const navigate = useNavigate();
 
     function handleFileInput(e){
         setSelectedFile(e.target.files[0])
@@ -34,6 +36,7 @@ export default function AddTrailForm(props){
         formData.append('type', state.type)
         props.handleAddTrail(formData);
         // Have to submit the form now! We need a function!
+        navigate('/');
       }
     
 
