@@ -16,9 +16,6 @@ export default function CreateTrailPage({user, handleLogout}){
     const [error, setError] = useState("")
     
     async function handleAddTrail(trail) {
-
-      const data = await trailApi.create(trail);
-      console.log(data);
         try {
             // setLoading(true);
             const data = await trailApi.create(trail);

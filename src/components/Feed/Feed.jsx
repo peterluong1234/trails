@@ -22,6 +22,7 @@ export default function Feed({ user, handleLogout }){
     async function deleteTrail(trailId) {
         try {
             const data = await trailsApi.deleteTrail(trailId);
+            console.log(data, 'what were deleting')
             getTrails();
         } catch(err) {
             console.log(err);
