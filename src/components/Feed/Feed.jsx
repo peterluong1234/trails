@@ -19,7 +19,14 @@ export default function Feed({ user, handleLogout }){
             console.log(err.message, '<-error');
         }
     }
-
+    async function deleteTrail(trailId) {
+        try {
+            const data = await trailsApi.deleteTrail(trailId);
+            getTrails();
+        } catch(err) {
+            console.log(err);
+        }
+    }
     useEffect(() => {
         getTrails();
     }, []);
@@ -28,7 +35,7 @@ export default function Feed({ user, handleLogout }){
         <Grid centered>
             <Grid.Row>
                 <Grid.Column>
-                    <PageHeader />
+                    <PageHeader handleLogout={handleLogout}/>
                 </Grid.Column>        
             </Grid.Row>
             <Grid.Row>
@@ -36,6 +43,7 @@ export default function Feed({ user, handleLogout }){
                 <TrailFeed 
                     trails={trails}
                     user={user}
+                    deleteTrail={deleteTrail}
                 />
                 </Grid.Column>
             </Grid.Row>

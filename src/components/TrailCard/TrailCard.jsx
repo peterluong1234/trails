@@ -1,9 +1,17 @@
 import React from 'react';
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-function TrailCard({trail, user}) { 
+function TrailCard({trail, user, deleteTrail}) { 
+    // console.log(user._id)
+    // console.log(trail.user._id)
+    let owner;
+    // if(trail.user._id == user._id)
 
+    function clickHandler() {
+        deleteTrail(trail._id)
+        console.log('x button')
+    }
   return (
     <Card key={trail._id} raised>
         <Card.Content textAlign="left">
@@ -18,16 +26,26 @@ function TrailCard({trail, user}) {
                         : "https://react.semantic-ui.com/images/wireframe/square-image.png"
                     }
                 />
-                {trail.user.username} 
+                {trail.user.username}
+
             </Link>
             <h3> {trail.name} </h3>
+            <Card.Content extra textAlign={"right"}>
+                {trail.user._id == user._id ? owner = true : owner = false }
+                {owner ? <Icon 
+                        color={'red'}
+                        name={"delete"}
+                        onClick={clickHandler} /> : console.log('not owner')}
+            </Card.Content>
             </Card.Header>
+            
         </Card.Content>
 
         <Image src={`${trail.photoUrl}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description>{trail.start}</Card.Description>
       </Card.Content>
+      
     </Card>
 
   );

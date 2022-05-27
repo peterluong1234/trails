@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Dimmer, Segment, Image } from 'semantic-ui-react'
 import TrailCard from '../TrailCard/TrailCard';
 
-export default function TrailFeed({trails, user}){
+export default function TrailFeed({trails, user, deleteTrail}){
 
     return (
     //    <div>THIS IS THE TRAIL FEED THAT WILL RENDER OUT EACH POST AS A CARD</div>
@@ -13,6 +13,7 @@ export default function TrailFeed({trails, user}){
                key={trail._id}
                trail = {trail} 
                user = {user}
+               deleteTrail = {deleteTrail}
                />
            )
        })}

@@ -6,7 +6,8 @@ const s3 = new S3();
 
 module.exports = {
     create,
-    index
+    index,
+    deleteTrail
 }
 
 function create(req, res){
@@ -40,5 +41,16 @@ async function index(req, res){
         res.status(200).json({trails})
     } catch(err){
 
+    }
+}
+
+async function deleteTrail(req, res) {
+    try {
+        const trail = await Trail.findOne({'trails._id': req.params.id, 'trails.username': req.user.username});
+        trail.remove(req.params.id);
+        await trail.save()
+        res.json({data: 'trail removed'})
+    } catch(err) {
+        res.status(400).json({err})
     }
 }
