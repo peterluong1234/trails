@@ -16,6 +16,7 @@ Based on the popular hiking app, AllTrails, Trails is an alternative that focuse
 
 ## Getting Started
 ### Planning
+[mywebsite](https://www.alltrails.com/)
 https://trails-tracker-app.herokuapp.com/
 https://trello.com/b/wDT0Tmuc/project-4
 
