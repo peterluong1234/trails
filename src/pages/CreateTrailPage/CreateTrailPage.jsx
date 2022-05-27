@@ -19,7 +19,7 @@ export default function CreateTrailPage({user, handleLogout}){
         try {
             // setLoading(true);
             const data = await trailApi.create(trail);
-            console.log(data);
+            // console.log(data);
         } catch (err) {
             console.log(err);
             setError(err.message)

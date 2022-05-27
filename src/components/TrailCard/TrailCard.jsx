@@ -10,7 +10,7 @@ function TrailCard({trail, user, deleteTrail}) {
 
     const clickHandler = () => {
         deleteTrail(trail._id)
-        console.log(trail._id)
+        // console.log(trail._id)
     }
   return (
     <Card key={trail._id} raised>

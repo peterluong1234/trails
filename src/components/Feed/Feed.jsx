@@ -6,14 +6,14 @@ import * as trailsApi from '../../utils/trailApi';
 import { Grid } from "semantic-ui-react";
 
 export default function Feed({ user, handleLogout }){  
-    console.log('feed page is rendering')
+    // console.log('feed page is rendering')
     const [trails, setTrails] = useState([]);
-    console.log(trailsApi);
+    // console.log(trailsApi);
 
     async function getTrails() {
         try {
             const data = await trailsApi.getAll();
-            console.log(data, '<-this is data');
+            // console.log(data, '<-this is data');
             setTrails([...data.trails]);
         } catch (err) {
             console.log(err.message, '<-error');
@@ -22,7 +22,7 @@ export default function Feed({ user, handleLogout }){
     async function deleteTrail(trailId) {
         try {
             const data = await trailsApi.deleteTrail(trailId);
-            console.log(data, 'what were deleting')
+            // console.log(data, 'what were deleting')
             getTrails();
         } catch(err) {
             console.log(err);

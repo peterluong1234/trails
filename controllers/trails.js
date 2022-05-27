@@ -11,14 +11,14 @@ module.exports = {
 }
 
 function create(req, res){
-    console.log(req.file, req.body, 'this is create method', req.user)
+    // console.log(req.file, req.body, 'this is create method', req.user)
     try {
         const filePath = `${uuidv4()}/${req.file.originalname}`
         const params = {Bucket: process.env.BUCKET_NAME, Key: filePath, Body: req.file.buffer};
         s3.upload(params, async function(err, data){
 			console.log(err, ' from aws')
             const trail = await Trail.create({name: req.body.name, start: req.body.start, end: req.body.end, type: req.body.type, user: req.user, photoUrl: data.Location});
-            console.log(trail)
+            // console.log(trail)
 			// make sure the post we're sending back has the user populated
 			await trail.populate('user');
 		
@@ -49,7 +49,7 @@ async function deleteTrail(req, res) {
         // console.log(req.params.id)
         const trail = await Trail.findById(req.params.id);
         trail.remove(req.params.id);
-        console.log('LOOKATTHIS', trail)
+        // console.log('LOOKATTHIS', trail)
         // await trail.save()
         res.json({data: 'trail removed'})
     } catch(err) {
