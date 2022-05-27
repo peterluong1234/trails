@@ -26,7 +26,7 @@ function App() {
     return (
       <Routes>
         <Route path="/" element={<Feed user={user} handleLogout={handleLogout} />} />
-        <Route path="/createtrail" element={<CreateTrailPage />} />
+        <Route path="/createtrail" element={<CreateTrailPage user={user}/>} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
