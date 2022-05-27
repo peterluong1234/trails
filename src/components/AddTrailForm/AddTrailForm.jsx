@@ -43,7 +43,7 @@ export default function AddTrailForm(props){
     return(
           
     <Grid textAlign='center' verticalAlign='middle'>
-    <Grid.Column style={{ maxWidth: 800 }}>
+    <Grid.Column style={{ maxWidth: 450 }}>
       <Segment>
         <h1>Create a New Trail</h1>
           <Form  autoComplete="off" onSubmit={handleSubmit}>
