@@ -43,7 +43,9 @@ function TrailCard({trail, user, deleteTrail}) {
 
         <Image src={`${trail.photoUrl}`} wrapped ui={false} />
       <Card.Content>
-        <Card.Description>{trail.start}</Card.Description>
+        <Card.Description><b>Start: </b>{trail.start}
+                         <b>     End: </b>{trail.end}</Card.Description>
+        <Card.Description><b>Type: </b>{trail.type}</Card.Description>
       </Card.Content>
       
     </Card>

@@ -28,7 +28,7 @@ export function getAll() {
 }
 
 export function deleteTrail(trailId){
-    return fetch(BASE_URL, {
+    return fetch(`${BASE_URL}/${trailId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': 'Bearer ' + tokenService.getToken()

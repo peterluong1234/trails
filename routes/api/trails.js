@@ -7,5 +7,6 @@ const upload = multer();
 
 router.post('/', upload.single('photo'), trailsCtrl.create);
 router.get('/', trailsCtrl.index)
+router.delete('/:id', trailsCtrl.deleteTrail)
 
 module.exports = router;
