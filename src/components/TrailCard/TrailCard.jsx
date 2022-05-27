@@ -16,7 +16,7 @@ function TrailCard({trail, user, deleteTrail}) {
     <Card key={trail._id} raised>
         <Card.Content textAlign="left">
             <Card.Header>
-            <Link to={`/${trail.user.username}`}>
+            {/* <Link to={`/${trail.user.username}`}> */}
                 <Image 
                     size="large"
                     avatar
@@ -28,7 +28,7 @@ function TrailCard({trail, user, deleteTrail}) {
                 />
                 {trail.user.username}
 
-            </Link>
+            {/* </Link> */}
             <Card.Content extra textAlign={"right"}>
                 {trail.user._id == user._id ? owner = true : owner = false }
                 {owner ? <Icon 
