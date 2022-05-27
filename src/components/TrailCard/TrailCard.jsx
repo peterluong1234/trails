@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Image, Button } from "semantic-ui-react";
+import { Card, Segment, Icon, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 function TrailCard({trail, user, deleteTrail}) { 
@@ -29,7 +29,6 @@ function TrailCard({trail, user, deleteTrail}) {
                 {trail.user.username}
 
             </Link>
-            <h3> {trail.name} </h3>
             <Card.Content extra textAlign={"right"}>
                 {trail.user._id == user._id ? owner = true : owner = false }
                 {owner ? <Icon 
@@ -43,8 +42,9 @@ function TrailCard({trail, user, deleteTrail}) {
 
         <Image src={`${trail.photoUrl}`} wrapped ui={false} />
       <Card.Content>
-        <Card.Description><b>Start: </b>{trail.start}
-                         <b>     End: </b>{trail.end}</Card.Description>
+        <Card.Header>{trail.name}</Card.Header>
+        <Card.Description><b>Start: </b>{trail.start}</Card.Description>
+        <Card.Description><b>End: </b>{trail.end}</Card.Description>
         <Card.Description><b>Type: </b>{trail.type}</Card.Description>
       </Card.Content>
       
